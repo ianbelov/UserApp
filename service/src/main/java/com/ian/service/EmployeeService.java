@@ -37,4 +37,16 @@ public class EmployeeService {
     public void delete(Long id) {
         employeeDAO.deleteById(id);
     }
+
+    public long getAverageSalaryByDivision(int division_id) {
+        long sum = 0;
+        long quantity = 0;
+        for (Employee e : employeeDAO.findAll()) {
+            if (e.getDivision_id() == division_id) {
+                sum += e.getSalary();
+                quantity += 1;
+            }
+        }
+        return sum / quantity;
+    }
 }

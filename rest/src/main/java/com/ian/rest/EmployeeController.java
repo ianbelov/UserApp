@@ -45,4 +45,10 @@ public class EmployeeController {
         employeeService.saveOrUpdate(person);
         return person.getId();
     }
+
+    @GetMapping("/averageSalary/{division_id}")
+    private long getAverageSalaryByDivision(@PathVariable("division_id") int division_id) {
+        return employeeService.getAverageSalaryByDivision(division_id);
+    }
+
 }
