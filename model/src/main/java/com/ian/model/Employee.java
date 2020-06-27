@@ -31,11 +31,11 @@ public class Employee {
         this.id = id;
     }
 
-    public String getFull_name() {
+    public String getFullName() {
         return full_name;
     }
 
-    public void setFull_name(String full_name) {
+    public void setFullName(String full_name) {
         this.full_name = full_name;
     }
 
