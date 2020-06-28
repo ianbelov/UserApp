@@ -3,7 +3,6 @@ package com.ian.service;
 import com.ian.dao.EmployeeDAO;
 import com.ian.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,22 +18,22 @@ public class EmployeeService {
         employeeDAO = dao;
     }
 
-    public List<Employee> getAllPersons() {
+    public List<Employee> getAllEmployees() {
         List<Employee> persons = new ArrayList<>();
         employeeDAO.findAll().forEach(person -> persons.add(person));
         System.out.println("Service");
         return persons;
     }
 
-    public Employee getPersonById(Long id) {
+    public Employee getEmployeeById(Long id) {
         return employeeDAO.findById(id).get();
     }
 
-    public void saveOrUpdate(Employee person) {
+    public void saveEmployee(Employee person) {
         employeeDAO.save(person);
     }
 
-    public void delete(Long id) {
+    public void deleteEmployee(Long id) {
         employeeDAO.deleteById(id);
     }
 
@@ -42,7 +41,7 @@ public class EmployeeService {
         long sum = 0;
         long quantity = 0;
         for (Employee e : employeeDAO.findAll()) {
-            if (e.getDivision_id() == division_id) {
+            if (e.getDivisionId() == division_id) {
                 sum += e.getSalary();
                 quantity += 1;
             }
