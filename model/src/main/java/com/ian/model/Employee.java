@@ -3,13 +3,14 @@ package com.ian.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Objects;
 
 @Entity
 public class Employee {
 
     @Id
     @GeneratedValue
-    private int id;
+    private long id;
     private String full_name;
     private long salary;
     private int division_id;
@@ -23,11 +24,11 @@ public class Employee {
         this.division_id = division_id;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -47,11 +48,28 @@ public class Employee {
         this.salary = salary;
     }
 
-    public int getDivision_id() {
+    public int getDivisionId() {
         return division_id;
     }
 
-    public void setDivision_id(int division_id) {
+    public void setDivisionId(int division_id) {
         this.division_id = division_id;
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, full_name, salary, division_id);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return getId() == employee.getId() &&
+                getSalary() == employee.getSalary() &&
+                getDivisionId() == employee.getDivisionId() &&
+                Objects.equals(full_name, employee.full_name);
+    }
+
 }

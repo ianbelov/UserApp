@@ -24,14 +24,14 @@ public class EmployeeTest {
         assertEquals(emptyEmployee.getId(),0);
         assertNull(emptyEmployee.getFullName());
         assertEquals(emptyEmployee.getSalary(),0L);
-        assertEquals(emptyEmployee.getDivision_id(),0);
+        assertEquals(emptyEmployee.getDivisionId(),0);
     }
 
     @Test
     public void allArgConstructorTest(){
         assertEquals(filledEmployee.getFullName(),"Ivan Belov");
         assertEquals(filledEmployee.getSalary(),300L);
-        assertEquals(filledEmployee.getDivision_id(),11);
+        assertEquals(filledEmployee.getDivisionId(),11);
     }
 
     @Test
@@ -54,8 +54,8 @@ public class EmployeeTest {
 
     @Test
     public void divisionIdTest(){
-        emptyEmployee.setDivision_id(12);
-        assertEquals(emptyEmployee.getDivision_id(), 12);
+        emptyEmployee.setDivisionId(12);
+        assertEquals(emptyEmployee.getDivisionId(), 12);
     }
 
 }

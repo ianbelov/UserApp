@@ -21,7 +21,7 @@ public class EmployeeController {
     @GetMapping("/persons")
     private List<Employee> getAllPersons() {
         System.out.println("Controller");
-        return employeeService.getAllPersons();
+        return employeeService.getAllEmployees();
     }
 
     @GetMapping("/test")
@@ -32,17 +32,17 @@ public class EmployeeController {
 
     @GetMapping("/persons/{id}")
     private Employee getPerson(@PathVariable("id") Long id) {
-        return employeeService.getPersonById(id);
+        return employeeService.getEmployeeById(id);
     }
 
     @DeleteMapping("/persons/{id}")
     private void deletePerson(@PathVariable("id") Long id) {
-        employeeService.delete(id);
+        employeeService.deleteEmployee(id);
     }
 
     @PostMapping("/persons")
-    private int savePerson(@RequestBody Employee person) {
-        employeeService.saveOrUpdate(person);
+    private long savePerson(@RequestBody Employee person) {
+        employeeService.saveEmployee(person);
         return person.getId();
     }
 
