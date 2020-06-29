@@ -57,7 +57,7 @@ public class EmployeeServiceTest {
 
     @Test
     public void getAllEmployeesTest() {
-        when(dao.findAll()).thenReturn(new ArrayList<Employee>());
+        when(dao.findAll()).thenReturn(new ArrayList<>());
         List<Employee> employees = service.getAllEmployees();
         verify(dao).findAll();
         assertNotNull(employees);
@@ -72,14 +72,13 @@ public class EmployeeServiceTest {
     }
 
     @Test
-    public void getAverageSalaryByDivision(){
+    public void getAverageSalaryByDivision() {
         List<Employee> employees = new ArrayList<>();
-        employees.add(new Employee("Test1",250,11));
-        employees.add(new Employee("Test2",150,11));
-        employees.add(new Employee("Test3",150,12));
+        employees.add(new Employee("Test1", 250, 11));
+        employees.add(new Employee("Test2", 150, 11));
+        employees.add(new Employee("Test3", 150, 12));
         when(dao.findAll()).thenReturn(employees);
-        assertEquals(service.getAverageSalaryByDivision(11),200);
+        assertEquals(service.getAverageSalaryByDivision(11), 200);
         verify(dao).findAll();
     }
-
 }

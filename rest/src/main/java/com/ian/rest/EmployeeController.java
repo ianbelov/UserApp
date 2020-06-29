@@ -50,5 +50,4 @@ public class EmployeeController {
     private long getAverageSalaryByDivision(@PathVariable("division_id") int division_id) {
         return employeeService.getAverageSalaryByDivision(division_id);
     }
-
 }

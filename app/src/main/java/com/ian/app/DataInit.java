@@ -18,7 +18,7 @@ public class DataInit implements ApplicationRunner {
     }
 
     @Override
-    public void run(ApplicationArguments args) throws Exception {
+    public void run(ApplicationArguments args) {
         Employee e1 = new Employee();
         e1.setFullName("Ivan Belov");
         e1.setSalary(400);

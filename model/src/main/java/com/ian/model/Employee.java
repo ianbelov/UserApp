@@ -78,5 +78,4 @@ public class Employee {
                 getDivisionId() == employee.getDivisionId() &&
                 Objects.equals(full_name, employee.full_name);
     }
-
 }
