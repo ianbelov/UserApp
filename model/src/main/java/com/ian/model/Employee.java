@@ -24,6 +24,13 @@ public class Employee {
         this.division_id = division_id;
     }
 
+    public Employee(long id, String full_name, long salary, int division_id) {
+        this.id = id;
+        this.full_name = full_name;
+        this.salary = salary;
+        this.division_id = division_id;
+    }
+
     public long getId() {
         return id;
     }
