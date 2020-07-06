@@ -1,18 +1,22 @@
 package com.ian.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 public class Employee {
 
     @Id
-    @GeneratedValue
+    @Column(name = "ID")
     private long id;
+
+    @Column(name = "FULL_NAME")
     private String full_name;
+
+    @Column(name = "SALARY")
     private long salary;
+
+    @Column(name = "DEPARTMENT_ID")
     private int division_id;
 
     public Employee() {

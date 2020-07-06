@@ -1,15 +1,16 @@
 package com.ian.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "DEPARTMENT")
 public class Department {
 
     @Id
-    @GeneratedValue
+    @Column(name = "DEPARTMENT_ID")
     private long id;
+
+    @Column(name = "DEPARTMENT_NAME")
     private String name;
 
     public Department(long id, String name) {
