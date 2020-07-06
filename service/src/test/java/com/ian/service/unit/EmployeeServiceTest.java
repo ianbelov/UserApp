@@ -71,14 +71,4 @@ public class EmployeeServiceTest {
         assertNotNull(e);
     }
 
-    @Test
-    public void getAverageSalaryByDivision() {
-        List<Employee> employees = new ArrayList<>();
-        employees.add(new Employee("Test1", 250, 11));
-        employees.add(new Employee("Test2", 150, 11));
-        employees.add(new Employee("Test3", 150, 12));
-        when(dao.findAll()).thenReturn(employees);
-        assertEquals(service.getAverageSalaryByDivision(11), 200);
-        verify(dao).findAll();
-    }
 }
